@@ -244,10 +244,7 @@ export async function generatePages(opts: StaticBuildOptions, internals: BuildIn
 
 		await queue.onIdle();
 		const assetsTimeEnd = performance.now();
-		logger.info(
-			null,
-			green(`✓ Completed in ${getTimeStat(assetsTimer, assetsTimeEnd)}.\n`)
-		);
+		logger.info(null, green(`✓ Completed in ${getTimeStat(assetsTimer, assetsTimeEnd)}.\n`));
 
 		delete globalThis?.astroAsset?.addStaticImage;
 	}
@@ -390,13 +387,13 @@ async function getPathsForRoute(
 				throw err;
 			});
 
-		const label = staticPaths.length === 1 ? 'page' : 'pages';
-		logger.debug(
-			'build',
-			`├── ${bold(green('✔'))} ${route.component} → ${magenta(
-				`[${staticPaths.length} ${label}]`
-			)}`
-		);
+			const label = staticPaths.length === 1 ? 'page' : 'pages';
+			logger.debug(
+				'build',
+				`├── ${bold(green('✔'))} ${route.component} → ${magenta(
+					`[${staticPaths.length} ${label}]`
+				)}`
+			);
 
 			paths.push(
 				...staticPaths

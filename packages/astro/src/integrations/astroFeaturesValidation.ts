@@ -105,18 +105,21 @@ function validateSupportKind(
 }
 
 function featureIsUnsupported(adapterName: string, logger: Logger, featureName: string) {
-	logger.error(
-		'config',
-		`The feature ${featureName} is not supported (used by ${adapterName}).`
-	);
+	logger.error('config', `The feature ${featureName} is not supported (used by ${adapterName}).`);
 }
 
 function featureIsExperimental(adapterName: string, logger: Logger) {
-	logger.warn('config', `The feature is experimental and subject to change (used by ${adapterName}).`);
+	logger.warn(
+		'config',
+		`The feature is experimental and subject to change (used by ${adapterName}).`
+	);
 }
 
 function featureIsDeprecated(adapterName: string, logger: Logger) {
-	logger.warn('config', `The feature is deprecated and will be removed in the future (used by ${adapterName}).`);
+	logger.warn(
+		'config',
+		`The feature is deprecated and will be removed in the future (used by ${adapterName}).`
+	);
 }
 
 const SHARP_SERVICE = 'astro/assets/services/sharp';

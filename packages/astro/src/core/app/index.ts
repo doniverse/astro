@@ -367,8 +367,8 @@ export class App {
 		const status = override?.status
 			? override.status
 			: oldResponse.status === 200
-			? newResponse.status
-			: oldResponse.status;
+			  ? newResponse.status
+			  : oldResponse.status;
 
 		return new Response(newResponse.body, {
 			status,
